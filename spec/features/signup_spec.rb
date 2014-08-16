@@ -15,11 +15,14 @@ describe 'signing up' do
   scenario 'when I signup a user is created for me' do
     visit '/signup'
 
-    fill_in 'user_first_name', with: 'Bobby'
-    fill_in 'user_last_name', with: 'Tables'
-    fill_in 'user_email', with: 'bobby@example.com'
-    fill_in 'user_password', with: 'password'
-    fill_in 'user_password_confirmation', with: 'password'
+    user_params = Fabricate.attributes_for(:user)
+
+    fill_in 'user_first_name',            with: user_params[:first_name]
+    fill_in 'user_last_name',             with: user_params[:last_name]
+    fill_in 'user_email',                 with: user_params[:email]
+    fill_in 'user_password',              with: user_params[:password]
+    fill_in 'user_password_confirmation', with: user_params[:password_confirmation]
+
     click_button 'Sign Up'
 
     expect(User.last.email).to eql('bobby@example.com')
