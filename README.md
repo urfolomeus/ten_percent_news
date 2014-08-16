@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/urfolomeus/ten_percent_news.svg?branch=master)](https://travis-ci.org/urfolomeus/ten_percent_news)
+[![Code Climate](https://codeclimate.com/github/urfolomeus/ten_percent_news/badges/gpa.svg)](https://codeclimate.com/github/urfolomeus/ten_percent_news)
+[![Test Coverage](https://codeclimate.com/github/urfolomeus/ten_percent_news/badges/coverage.svg)](https://codeclimate.com/github/urfolomeus/ten_percent_news)
+[![Dependency Status](https://gemnasium.com/urfolomeus/ten_percent_news.svg)](https://gemnasium.com/urfolomeus/ten_percent_news)
+
 # Ten Percent News
 
 Description goes here.
