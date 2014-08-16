@@ -47,4 +47,23 @@ describe SessionsController do
       end
     end
   end
+
+  describe 'DELETE destroy' do
+    before :each do
+      allow(controller).to receive(:logout)
+      delete :destroy
+    end
+
+    it 'logs the user out' do
+      expect(controller).to have_received(:logout)
+    end
+
+    it 'redirects to the root page' do
+      expect(response).to redirect_to(:root)
+    end
+
+    it 'displays a success notice' do
+      expect(flash[:notice]).to eql('Signed out')
+    end
+  end
 end

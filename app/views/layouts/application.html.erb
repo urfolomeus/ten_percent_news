@@ -11,6 +11,7 @@
     <%= link_to 'Home', root_path %>
     <%= link_to 'Sign Up', signup_path %>
     <%= link_to 'Sign In', signin_path %>
+    <%= link_to 'Sign Out', signout_path, method: :delete %>
   </nav>
 
   <%- if logged_in? %>

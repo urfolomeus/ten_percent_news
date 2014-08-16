@@ -9,5 +9,10 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    logout
+    redirect_to :root, notice: 'Signed out'
+  end
 end
 
