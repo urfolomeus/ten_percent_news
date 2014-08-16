@@ -1,9 +1,21 @@
 require 'rails_helper'
 
 feature 'As a product owner I want users to sign in to use the site' do
-  scenario 'When I am not logged in I can see the Sign In link' do
-    visit '/'
-    expect(page).to have_link('Sign In')
+  context 'When I am not logged in' do
+    scenario 'I can see the Sign Up link' do
+      visit '/'
+      expect(page).to have_link('Sign Up')
+    end
+
+    scenario 'I can see the Sign In link' do
+      visit '/'
+      expect(page).to have_link('Sign In')
+    end
+
+    scenario 'I cannot see the Sign Out link' do
+      visit '/'
+      expect(page).not_to have_link('Sign Out')
+    end
   end
 
   context 'When I am sign in as a valid user' do
@@ -20,6 +32,16 @@ feature 'As a product owner I want users to sign in to use the site' do
 
     scenario 'I am signed in' do
       expect(page).to have_content('Hello, Bobby')
+    end
+
+    scenario 'I cannot see the Sign Up link' do
+      visit '/'
+      expect(page).not_to have_link('Sign Up')
+    end
+
+    scenario 'I cannot see the Sign In link' do
+      visit '/'
+      expect(page).not_to have_link('Sign In')
     end
 
     scenario 'I can see the Sign Out link' do
