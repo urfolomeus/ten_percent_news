@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'sorcery'
+gem 'simple_form'
 
 gem 'puma'
 
@@ -24,7 +25,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara-rails'
   gem 'launchy'
-  gem 'fabricator'
+  gem 'fabrication'
   gem 'ffaker'
 end
 
