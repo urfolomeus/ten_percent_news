@@ -10,9 +10,20 @@
   <nav role='main navigation'>
     <%= link_to 'Home', root_path %>
     <%= link_to 'Sign Up', signup_path %>
+    <%= link_to 'Sign In', signin_path %>
   </nav>
 
-<%= yield %>
+  <%- if logged_in? %>
+    <p>Hello, <%= current_user.first_name %></p>
+  <% end %>
+
+  <div id="flashes">
+    <%- flash.each do |class_name, message| %>
+      <div class="<%= class_name %>"><%= message %></div>
+    <% end %>
+  </div>
+
+  <%= yield %>
 
 </body>
 </html>
