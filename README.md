@@ -24,7 +24,9 @@ The test suite contains feature style end-to-end tests that run slower that the 
 tests. You can run the test suite with or without these tests as follows:
 
 If you want to run all of the tests: `bin/rspec`
+
 If you only want to run the feature tests: `bin/rspec --tag feature:true`
+
 If you want to run everything *apart* from the feature tests: `bin/rspec --tag ~feature:true`
 
 ## Continuous Integration
