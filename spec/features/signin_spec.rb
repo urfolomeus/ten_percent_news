@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'As a product owner I want users to sign in to use the site' do
+feature 'As a product owner I want users to sign in to use the site', feature:true do
   context 'When I am not logged in' do
     scenario 'I can see the Sign Up link' do
       visit '/'
@@ -22,7 +22,7 @@ feature 'As a product owner I want users to sign in to use the site' do
     before :each do
       visit '/signin'
 
-      user = Fabricate(:user)
+      user = Fabricate(:active_user)
 
       fill_in 'email',    with: 'bobby@example.com'
       fill_in 'password', with: 'password'

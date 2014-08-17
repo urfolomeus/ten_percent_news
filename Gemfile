@@ -33,6 +33,7 @@ group :development, :test do
   gem 'launchy',        '~> 2.4.2'
   gem 'fabrication',    '~> 2.11.3'
   gem 'ffaker',         '~> 1.24.0'
+  gem 'letter_opener',  '~> 1.2.0'
 end
 
 group :test do

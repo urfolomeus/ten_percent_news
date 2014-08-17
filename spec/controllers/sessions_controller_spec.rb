@@ -9,7 +9,7 @@ describe SessionsController do
   end
 
   describe 'POST create' do
-    let(:user)           { Fabricate(:user) }
+    let(:user)           { Fabricate(:active_user) }
     let(:email)          { 'bobby@example.com' }
     let(:pass)           { 'password' }
     let(:login_response) { user }
@@ -44,6 +44,10 @@ describe SessionsController do
 
       it 'renders the login page' do
         expect(response).to render_template(:new)
+      end
+
+      it 'displays an error alert' do
+        expect(flash[:alert]).to eql("Couldn't sign in")
       end
     end
   end
